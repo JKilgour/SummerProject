@@ -2,12 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Grid{
-
-    public static void main(String[] args){
+   
         JFrame a = new JFrame();
+        JButton b = new JButton();
 
-       
-        a.setSize(500,500);
+       public Grid(){
+        a.setSize(800,800);
         a.setVisible(true);
-    }
+       }
+    
 }
