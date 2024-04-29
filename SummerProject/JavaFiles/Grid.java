@@ -9,6 +9,11 @@ public class Grid{
        public Grid(){
         a.setSize(800,800);
         a.setVisible(true);
+        for(int i=0;i < 14;i++){
+            for(int x=0; x  <14;x++){
+
+            }
+        }
        }
     
 }
