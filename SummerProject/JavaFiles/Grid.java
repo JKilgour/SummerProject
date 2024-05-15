@@ -22,11 +22,11 @@ public class Grid{
         initialiseGrid();
     }
     private void initialiseGrid(){
-        frame.setSize(1000,1000);
+        frame.setSize(1200,1200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel mainFrame = new JPanel(new BorderLayout()); //createsa layout to add each panel to
         JPanel gridPanel = new JPanel(new GridLayout(15, 15, -1, -1)); //creates a layout for the grid of buttons
-        gridPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0)); //creates a gap between the top and left
+        gridPanel.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0)); //creates a gap between the top and left
         buttons = new JButton[15][15];
         frame.add(mainFrame);
         mainFrame.add(gridPanel,BorderLayout.CENTER);
@@ -46,26 +46,45 @@ public class Grid{
         
         JPanel topText = new JPanel(new GridLayout(1,15));
         JPanel leftText = new JPanel(new GridLayout(15,1));
-        leftText.setBorder(BorderFactory.createEmptyBorder(50, 0, 0, 0));
-        topText.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 0));
+        leftText.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        topText.setBorder(BorderFactory.createEmptyBorder(0, 100, 0, 0));
         
         topCount = new JLabel[15];
         leftCount = new JLabel[15];
         
         mainFrame.add(leftText, BorderLayout.WEST);
         mainFrame.add(topText, BorderLayout.NORTH);
+        int count = 0;
         
         
         for(int i = 0; i<15;i++){
             
-            int count = 0;
+            count = 0;
+            JLabel label = new JLabel();
+            
             for(int j = 0; j < 15; j++){
                 if(game[j][i] == 1){
                     count++;
+                }
+                if(game[j][i]== 0){
+                    if(count != 0){
+                        String labelText = label.getText();
+                        labelText += count;
+                        for(int x = 0; x< 15-j;x++){
+                            if(game[j + x][i] == 1){
+                                labelText += ", ";  
+                                break;                 
+                            }
+                            
+                        }
+                        
+                        
+                        label.setText(labelText);
+                        count = 0;
+                        
+                    }
                 }    
             }
-            System.out.println(count);
-            JLabel label = new JLabel(String.valueOf((count)));
             label.setPreferredSize(new Dimension(50, 50)); 
             label.setHorizontalAlignment(SwingConstants.CENTER);
             
@@ -75,13 +94,32 @@ public class Grid{
         }
         for (int i = 0; i < 15; i++) {
             
-            int count = 0;
+            count = 0;
+            JLabel label = new JLabel();
+            
             for(int j = 0; j < 15; j++){
-                if(game[i][j]==1){
+                if(game[i][j] == 1){
                     count++;
+                }
+                if(game[i][j]== 0){
+                    if(count != 0){
+                        String labelText = label.getText();
+                        labelText += count;
+                        for(int x = 0; x< 15-j;x++){
+                            if(game[i][j+x] == 1){
+                                labelText += ", ";  
+                                break;                     
+                            }
+                        }
+                        
+                        
+                        label.setText(labelText);
+                        count = 0;
+                        
+                    }
                 }    
             }
-            JLabel label = new JLabel(String.valueOf((count)));
+            
             label.setPreferredSize(new Dimension(50, 50));
             label.setHorizontalAlignment(SwingConstants.CENTER);
             
@@ -100,7 +138,7 @@ public class Grid{
                 int col = x;
                 // button.setVisible(false);
                 button.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-                
+                button.setPreferredSize(new Dimension(50,50));
                 button.addActionListener(new ActionListener(){
                     @Override
                     public void actionPerformed(ActionEvent e){
