@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args){
-        int [][] game = {
+        int [][] game = { //arrays of answers
             {0,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
             {0,0,1,1,1,1,1,1,1,1,1,1,1,0,0},
             {0,0,0,1,1,1,1,1,1,1,1,1,0,0,0},
@@ -19,7 +19,7 @@ public class Main {
         };
 
 
-        int [][] solution = {
+        int [][] solution = { //array for players answer
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
