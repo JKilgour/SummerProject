@@ -40,6 +40,13 @@ public class Grid{
                 }
                 else{
                     checkBox.setText("Incorrect");
+                    for(int i = 0;i<15;i++){
+                        for(int j = 0; j<15;j++){
+                            if(game[i][j]!=solution[i][j]){
+                                buttons[i][j].setBackground(Color.RED);
+                            }
+                        }
+                    }
                 }
             }
         });
