@@ -36,7 +36,7 @@ public class Grid{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(Arrays.deepEquals(solution, game)){ //checks whether the player matches the solution
-                    checkBox.setText("Correct"); 
+                    checkBox.setText("Congrats, you win!"); 
                 }
                 else{
                     checkBox.setText("Incorrect");

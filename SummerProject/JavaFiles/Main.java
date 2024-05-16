@@ -36,8 +36,10 @@ public class Main {
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
         };
-        // readBMP("elephant.bmp");
+        // readBMP("BMP-Files/elephant.bmp");
 
         new Grid(game, solution);
     }
+
+    
 }
