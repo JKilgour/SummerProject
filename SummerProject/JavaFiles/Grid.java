@@ -37,6 +37,14 @@ public class Grid{
             public void actionPerformed(ActionEvent e){
                 if(Arrays.deepEquals(solution, game)){ //checks whether the player matches the solution
                     checkBox.setText("Congrats, you win!"); 
+                    JPanel winner = new JPanel();
+                    JLabel win = new JLabel();
+                    String winText = win.getText();
+                    winText = "You Win";
+                    win.setText(winText);
+                    winner.add(win, BorderLayout.NORTH);
+                    frame.add(winner);
+                    mainFrame.setVisible(false);
                 }
                 else{
                     checkBox.setText("Incorrect");
