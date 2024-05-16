@@ -66,12 +66,19 @@ public class Grid{
                 if(game[j][i] == 1){
                     count++;
                 }
+                if(j == 14 && count!=0){
+                    String labelText = label.getText();
+                    labelText += count;
+                    label.setText(labelText);
+                    count = 0;
+
+                }
                 if(game[j][i]== 0){
                     if(count != 0){
                         String labelText = label.getText();
                         labelText += count;
                         for(int x = 0; x< 15-j;x++){
-                            if(game[j + x][i] == 1){
+                            if(game[j+x][i] == 1){
                                 labelText += ", ";  
                                 break;                 
                             }
@@ -100,6 +107,13 @@ public class Grid{
             for(int j = 0; j < 15; j++){
                 if(game[i][j] == 1){
                     count++;
+                }
+                if(j == 14 && count!=0){
+                    String labelText = label.getText();
+                    labelText += count;
+                    label.setText(labelText);
+                    count = 0;
+
                 }
                 if(game[i][j]== 0){
                     if(count != 0){
